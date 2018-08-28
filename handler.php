@@ -57,7 +57,7 @@ class UploadHandler {
         $targetPath = join(DIRECTORY_SEPARATOR, array($uploadDirectory, $uuid, $name));
         $this->uploadName = $name;
 
-        if (!file_exists($targetPath)){
+        if (!file_exists(dirname($targetPath))){
             mkdir(dirname($targetPath), 0777, true);
         }
         $target = fopen($targetPath, 'wb');
